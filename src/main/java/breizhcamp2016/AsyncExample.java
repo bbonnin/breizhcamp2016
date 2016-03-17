@@ -30,6 +30,12 @@ public class AsyncExample {
                 System.out.println("Conference inserée");
             });
 
+        collection.count((final Long count, final Throwable t) -> {
+            if (t != null) {
+                System.out.println("Count = " + count);
+            }
+        });
+
     }
 
 }
