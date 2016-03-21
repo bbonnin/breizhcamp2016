@@ -11,14 +11,22 @@ public class Speaker {
     @Id
     public String twitterHandle;
 
+    public String name;
+
+    public String email;
+
     public String[] conferences;
 
     public Speaker() {
 
     }
 
-    public Speaker(String twitterHandle) {
-        this.twitterHandle = twitterHandle;
+    public Speaker(String name) {
+        this.name = name;
+        String login = name.toLowerCase().replace(" ", "_");
+        this.twitterHandle = "@" + login;
+        this.email = login + "@breizhcamp.org";
+
     }
 
     @Override
